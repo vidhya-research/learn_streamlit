@@ -1,2 +1,2 @@
-# learn_streamlit
+# This application helps in planning meals for the week!
 
