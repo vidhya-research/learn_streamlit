@@ -1,4 +1,4 @@
-from helper_functions import plan, update
+from helper_functions import plan
 import streamlit as st
 
 #https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded - Refer this website for the icons used.
@@ -60,17 +60,6 @@ if st.session_state['ss_btn_view'] == True:
         for i in lst:
             s += "- "+i+"\n"
         st.markdown(s)
-
-st.button(label="Let's update the menu!", help="Please click this button to add more options to the menu!", icon=":material/edit_document:",on_click=btn_update)
-
-if st.session_state["ss_btn_update"] == True:
-    option1 = st.selectbox(label='Please select the menu to be updated!', options=files,index=None,on_change=sel_update)
-    if st.session_state["ss_sel_update"] == True:
-        if option1 != None:
-            option2 = st.text_input(label='Please type the flavour to be added!',on_change=text_update)
-            if st.session_state["ss_text_update"]==True:
-                str = update(option1, option2)
-                st.write(str)
 
 if st.button(label="Let's Plan for the week!", help="Please click this button to plan the flavours for the week!", icon=":material/chef_hat:",on_click=btn_plan):
     df = plan()

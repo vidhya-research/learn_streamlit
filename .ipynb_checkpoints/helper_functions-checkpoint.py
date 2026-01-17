@@ -1,25 +1,6 @@
 import random
 import pandas as pd
 
-def update(option1, option2):
-    file_name=option1+".txt"
-    with open(file_name,"r") as f:
-        f.seek(0)
-        lst=f.readlines()
-        c = 0
-        for i in lst:
-            if i.strip() == option2.strip():
-                break
-            c+=1
-        if c == len(lst):
-            with open(file_name,"a") as f:
-                f.write("\n"+option2)
-            str = option2+" Added!"
-            return(str)
-        else:
-            str=option2+" Already Exists!"
-            return(str)
-
 def plan():
     with open("lunch.txt","r") as f:
         lunch = f.readlines()
