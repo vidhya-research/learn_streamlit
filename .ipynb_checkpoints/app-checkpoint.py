@@ -40,7 +40,6 @@ def btn_plan():
     st.session_state['ss_btn_view'] = False
     st.session_state['ss_btn_update'] = False
     st.session_state['ss_btn_plan'] = True
-
     
 st.set_page_config(layout="wide")
 st.title('Flavours of home')
@@ -61,9 +60,12 @@ if st.session_state['ss_btn_view'] == True:
             s += "- "+i+"\n"
         st.markdown(s)
 
-if st.button(label="Let's Plan for the week!", help="Please click this button to plan the flavours for the week!", icon=":material/chef_hat:",on_click=btn_plan):
-    df = plan()
+st.button(label="Let's Plan for the week!", help="Please click this button to plan the flavours for the week!", icon=":material/chef_hat:",on_click=btn_plan)
+
+if st.session_state['ss_btn_plan'] == True:
+    df, str_grocery = plan()
     st.dataframe(df)
+    st.download_button("Grocery Shopping List", data = str_grocery, icon=":material/shopping_cart:", on_click = "ignore")
 
 
 

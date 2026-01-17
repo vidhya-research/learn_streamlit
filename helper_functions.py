@@ -27,7 +27,8 @@ def plan():
     lst_veggies = random.sample(range(0,len_veggies),7)
     lst_fruits = random.sample(range(0,len_fruits),3)
     lst_breakfast = random.sample(range(0,len_breakfast),7)
-    
+
+    lst_grocery = []
     dict_lunch = {}
     dict_fruits = {}
     dict_breakfast = {}
@@ -38,20 +39,29 @@ def plan():
         r_chutney = random.choice(range(len_chutney))
         if lst_breakfast[i] >=4 and lst_breakfast[i] <=6:                                           #Change if change in breakfast.txt 
             dict_breakfast[days[i]] = breakfast[lst_breakfast[i]] + ", " + curries[r_curries]
+            lst_grocery.append(curries[r_curries])
         elif lst_breakfast[i] <= 3:                                                                 #Change if change in breakfast.txt
             dict_breakfast[days[i]] = breakfast[lst_breakfast[i]] + ", " + chutney[r_chutney]
+            lst_grocery.append(chutney[r_chutney])
         else:
             dict_breakfast[days[i]] = breakfast[lst_breakfast[i]]
         dict_lunch[days[i]] = lunch[lst_lunch[i]] + ", " + veggies[lst_veggies[i]]
+        lst_grocery.append(lunch[lst_lunch[i]])
+        lst_grocery.append(veggies[lst_veggies[i]])
         dict_fruits[days[i]] = fruits[random.choice(lst_fruits)]
+        lst_grocery.append(fruits[random.choice(lst_fruits)])
         r_dinner = random.choice(range(len_dinner) )
         if r_dinner >= 2 and r_dinner <= 3:                                                                      #Change if change in dinner.txt
             dict_dinner[days[i]] = dinner[r_dinner] + ", " + curries[r_curries]
+            lst_grocery.append(curries[r_curries])
         elif r_dinner <= 1:                                                                                     #Change if change in dinner.txt
             dict_dinner[days[i]] = dinner[r_dinner] + ", " + chutney[r_chutney]
+            lst_grocery.append(chutney[r_chutney])
         else:
             dict_dinner[days[i]] = dinner[r_dinner]
     lst_of_dict = [dict_breakfast,dict_lunch,dict_fruits,dict_dinner]
     df = pd.DataFrame(data=lst_of_dict, index=["Breakfast","Lunch","Snack","Dinner"])
-    return df
+    set_grocery = set(lst_grocery)
+    result_string = "".join(set_grocery)
+    return df, result_string
     
