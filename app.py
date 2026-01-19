@@ -63,9 +63,10 @@ if st.session_state['ss_btn_view'] == True:
 st.button(label="Let's Plan for the week!", help="Please click this button to plan the flavours for the week!", icon=":material/chef_hat:",on_click=btn_plan)
 
 if st.session_state['ss_btn_plan'] == True:
-    df, str_grocery = plan()
+    df, str_grocery, str_daily = plan()
     st.dataframe(df)
-    st.download_button("Grocery Shopping List", data = str_grocery, icon=":material/shopping_cart:", on_click = "ignore")
+    st.download_button("Daily Plan", data = str_daily, file_name="plan.html", mime="text/html", icon=":material/calendar_today:", on_click = "ignore")
+    st.download_button("Grocery Shopping List", data = str_grocery, file_name="grocery.txt", icon=":material/shopping_cart:", on_click = "ignore")
 
 
 
