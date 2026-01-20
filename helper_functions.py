@@ -74,6 +74,7 @@ def plan():
     str_daily = f"""
     <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 <title>Flavours of Home!</title>
 </head>
@@ -82,9 +83,11 @@ def plan():
 
 <h1 style="text-align: center;"><b>Flavours of Home!</b></h1>
 <br>
-
-<label for="h_lb_day" style="text-align: center;">Today is: </label>
-<select name="s_day" id="h_sel_day" style="text-align: center;">
+<img src="https://github.com/vidhya-research/learn_streamlit/blob/main/bg.JPG?raw=true" width="400" height="524">
+<br>
+<br>
+<label for="h_lb_day" style="text-align: center;font-size: 20px;font-family:'Courier New';">Today is: </label>
+<select name="s_day" id="h_sel_day" style="text-align: center;font-size: 16px;font-family:'Courier New';">
     <option value="Sunday">Sunday</option>
     <option value="Monday">Monday</option>
     <option value="Tuesday">Tuesday</option>
@@ -94,9 +97,9 @@ def plan():
     <option value="Saturday">Saturday</option>
 </select>
 
-<button type="button" onclick="display()">Let's see!</button>
+<button type="button" onclick="display()" style="font-size: 16px;font-family:'Courier New';">Let's see!</button>
 
-<p id="disp"></p>
+<p id="disp" style="font-size: 20px;font-family:'Courier New'; "></p>
 
 <script>
 function display() {{

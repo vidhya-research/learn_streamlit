@@ -44,6 +44,8 @@ def btn_plan():
 st.set_page_config(layout="wide")
 st.title('Flavours of home')
 
+st.image("https://github.com/vidhya-research/learn_streamlit/blob/main/bg.JPG?raw=true",width=400)
+
 files = ['breakfast','lunch','veggies','fruits','dinner','curries','chutney']
 
 st.button(label="Let's view the menu!",help="Please click this button to view the menu!",icon=":material/multimodal_hand_eye:",on_click=btn_view)
