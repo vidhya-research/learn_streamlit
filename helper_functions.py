@@ -83,10 +83,10 @@ def plan():
 
 <h1 style="text-align: center;"><b>Flavours of Home!</b></h1>
 <br>
-<img src="https://github.com/vidhya-research/learn_streamlit/blob/main/bg.JPG?raw=true" width="400" height="524">
+<img src="https://raw.githubusercontent.com/vidhya-research/learn_streamlit/refs/heads/main/bg.JPG" width="400" height="527" class = "responsive">
 <br>
 <br>
-<label for="h_lb_day" style="text-align: center;font-size: 20px;font-family:'Courier New';">Today is: </label>
+<label for="h_lb_day" style="text-align: center;font-size: 16px;font-family:'Courier New';">Today is: </label>
 <select name="s_day" id="h_sel_day" style="text-align: center;font-size: 16px;font-family:'Courier New';">
     <option value="Sunday">Sunday</option>
     <option value="Monday">Monday</option>
@@ -99,7 +99,7 @@ def plan():
 
 <button type="button" onclick="display()" style="font-size: 16px;font-family:'Courier New';">Let's see!</button>
 
-<p id="disp" style="font-size: 20px;font-family:'Courier New'; "></p>
+<p id="disp" style="font-size: 16px;font-family:'Courier New'; "></p>
 
 <script>
 function display() {{
