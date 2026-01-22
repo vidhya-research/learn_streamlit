@@ -1,13 +1,9 @@
 import random
 import pandas as pd
-import base64
 
 def img2str():
-    # Encode the image to a base64 string.
-    with open("bg.jpg", "rb") as img:
-        sb = base64.b64encode(img.read())
-        s = sb.decode('utf-8')
-        s="data:image/jpg;base64,"+s
+    with open("img_str.txt","r") as f:
+        s=f.read()
     return s
     
 def plan():
