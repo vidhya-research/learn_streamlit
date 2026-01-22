@@ -1,6 +1,15 @@
 import random
 import pandas as pd
+import base64
 
+def img2str():
+    # Encode the image to a base64 string.
+    with open("bg.jpg", "rb") as img:
+        sb = base64.b64encode(img.read())
+        s = sb.decode('utf-8')
+        s="data:image/jpg;base64,"+s
+    return s
+    
 def plan():
     with open("lunch.txt","r") as f:
         lunch = f.readlines()
@@ -83,7 +92,7 @@ def plan():
 
 <h1 style="text-align: center;"><b>Flavours of Home!</b></h1>
 <br>
-<img src="https://raw.githubusercontent.com/vidhya-research/learn_streamlit/refs/heads/main/bg.JPG" width="400" height="527" class = "responsive">
+<img src="{img2str()}" width="350" height="455" class = "responsive">
 <br>
 <br>
 <label for="h_lb_day" style="text-align: center;font-size: 16px;font-family:'Courier New';">Today is: </label>
